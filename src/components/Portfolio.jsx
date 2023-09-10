@@ -1,7 +1,7 @@
 import "./css/portfolio.css";
+import ProjectList from "./ProjectList";
 import Toolbar from "./Toolbar";
 import { useState } from "react";
-import Masonry from "react-responsive-masonry";
 
 export default function Portfolio() {
   const filters = ["All", "Websites", "Flayers", "Business Cards"];
@@ -77,7 +77,7 @@ export default function Portfolio() {
     },
   ];
 
-  const filterArr = (arg) => {
+  const filter = (arg) => {
     if (arg === "All") {
       return images;
     } else {
@@ -88,16 +88,7 @@ export default function Portfolio() {
   return (
     <div className="portfolio">
       <Toolbar props={{ filters, selected: state, onSelectFilter: setState }} />
-      <Masonry columnsCount={3} gutter="10px">
-        {filterArr(state).map((el, idx) => (
-          <img
-            src={el.img}
-            alt={el.category}
-            key={idx}
-            style={{ width: "100%", display: "block" }}
-          />
-        ))}
-      </Masonry>
+      <ProjectList props={filter(state)} />
     </div>
   );
 }
