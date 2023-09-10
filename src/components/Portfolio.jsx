@@ -77,18 +77,16 @@ export default function Portfolio() {
     },
   ];
 
-  const filter = (arg) => {
-    if (arg === "All") {
-      return images;
-    } else {
-      return images.filter((el) => el.category === arg);
-    }
-  };
-
   return (
     <div className="portfolio">
       <Toolbar props={{ filters, selected: state, onSelectFilter: setState }} />
-      <ProjectList props={filter(state)} />
+      <ProjectList
+        props={
+          state === "All"
+            ? images
+            : images.filter((el) => el.category === state)
+        }
+      />
     </div>
   );
 }
