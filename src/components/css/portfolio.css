@@ -1,0 +1,13 @@
+body {
+  background-color: #fff;
+}
+
+.portfolio {
+}
+
+.images-list {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  flex-wrap: wrap;
+}

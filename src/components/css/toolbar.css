@@ -1,0 +1,22 @@
+.filter-list {
+  list-style-type: none;
+  display: flex;
+  gap: 5px;
+}
+
+.filter-item {
+  padding: 3px 15px;
+  border: 1px solid #000;
+  background-color: #dedddd;
+  color: #000;
+}
+
+.selected {
+  background-color: #515151;
+  color: #fff;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
